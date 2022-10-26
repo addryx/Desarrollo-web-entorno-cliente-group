@@ -42,29 +42,9 @@ function cargar() {
     formulario.appendChild(apellidos);
 
 
-/* DIRECCIÓN 
-
-A partir de aquí hay que ordenarlo y corregir cosas (Crear labels etc) */
+/* DIRECCIÓN */
 
 
 
-    var direccion = document.createElement("input");
-    direccion.id = "name" // <input id="name"/>
-    direccion.type = "text" // <input id="name" type="text"/>
-    direccion.name = "name" // <input id="name" type="text" name="street"/>
 
-    var contenido2 = document.createTextNode("Direccion");
-
-    formulario.appendChild(direccion);
-    document.body.appendChild(contenido2);
-
-    var numero = document.createElement("input");
-    numero.id = "name" // <input id="name"/>
-    numero.type = "number" // <input id="name" type="number"/>
-    numero.name = "number" // <input id="name" type="number" name="number"/>
-
-    var contenido3 = document.createTextNode("Numero");
-
-    formulario.appendChild(numero);
-    document.body.appendChild(contenido3);
 }
