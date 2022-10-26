@@ -22,6 +22,67 @@
 
             document.body.div.appendChild(formulario);
             document.body.div.formulario.appendChild(input);
+
+            /* Vamos a crear un parrafo */
+		var parrafo = document.createElement("p");
+		parrafo.id ="p1" //<p id="p1"/>
+				
+		var contenedor = document.createTextNode("Vamos a crear un formulario HTML con JS"); //<p id="p1">Vamos a crear un formulario con JS</p>
+		
+		parrafo.appendChild(contenedor);
+		
+		document.body.appendChild(parrafo);
+		
+		/* Ahora viene el formulario */
+		
+		var formulario = document.createElement("form");
+		formulario.id = "formulario"; // <form id="formulario"</form>
+		
+		document.body.appendChild(formulario);
+		
+		/* var cuadro = document.createElement("fieldset");
+		
+		document.body.form.appendChild(cuadro); */
+		
+		var nombre = document.createElement("input");
+		nombre.id = "name" // <input id="name"/>
+		nombre.type = "text" // <input id="name" type="text"/>
+		nombre.name = "nombre" // <input id="name" type="text" name="nombre"/>
+			
+		var contenido = document.createTextNode("Nombre y apellidos");
+		
+		formulario.appendChild(nombre);
+		document.body.appendChild(contenido);
+		
+		var documento = document.createElement("input");
+		documento.id = "name" // <input id="name"/>
+		documento.type = "text" // <input id="name" type="text"/>
+		documento.name = "nombre" // <input id="name" type="text" name="document"/>
+			
+		var contenido1 = document.createTextNode("DNI");
+			
+		formulario.appendChild(documento);
+		document.body.appendChild(contenido1);
+		
+		var direccion = document.createElement("input");
+		direccion.id = "name" // <input id="name"/>
+		direccion.type = "text" // <input id="name" type="text"/>
+		direccion.name = "name" // <input id="name" type="text" name="street"/>
+		
+		var contenido2 = document.createTextNode("Direccion");
+		
+		formulario.appendChild(direccion);
+		document.body.appendChild(contenido2);
+		
+		var numero = document.createElement("input");
+		numero.id = "name" // <input id="name"/>
+		numero.type = "number" // <input id="name" type="number"/>
+		numero.name = "number" // <input id="name" type="number" name="number"/>
+		
+		var contenido3 = document.createTextNode("Numero");
+		
+		formulario.appendChild(numero);
+		document.body.appendChild(contenido3);
         }
     </script>
 </head>
