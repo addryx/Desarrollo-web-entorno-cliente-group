@@ -29,34 +29,142 @@
         label.id1="nombreusuario";//creamos el atributo ID
         label.for1="nombreusuario";//creamos el atributo FOR 
         var contenido1 = document.createTextNode("Introduce tu nombre");//Creamos un nodo texto 
-        document.body.div.form.label(id, for1);//Añadimos a la etiqueta LABEL el id y el FOR 
+        document.body.div.form.label(id1, for1);//Añadimos a la etiqueta LABEL el id y el FOR 
         label.appendChild(contenido1);//Añadimos el nodo TEXTO con la etiqueta LABEL
 
         var input= document.createElement("input");//CREAMOS un nodo de tipo Element, un input.
         input.type="text";//creamos el atributo TYPE
-        input.name="nombreusuario";//creamos el atributo NAME
-        input.id2="nombreusuario";//creamos el atributo ID.2
+        input.name1="nombreusuario";//creamos el atributo NAME
         input.required;//creamos el atributo REQUIRED
 
         //CREAMOS LOS APELLIDOS
         var label2= document.createElement("label"); //CREAMOS un nodo de tipo Element, una etiqueta.
-        label.id2="apellidosusuario";//creamos el atributo ID
+        label.id3="apellidosusuario";//creamos el atributo ID
         label.for2="apellidosuario";//creamos el atributo FOR 
         var contenido2 = document.createTextNode("Introduce tus apellidos");//Creamos un nodo texto 
-        document.body.div.form.label2(id, for2);//Añadimos a la etiqueta LABEL el id y el FOR 
+        document.body.div.form.label2(id3, for2);//Añadimos a la etiqueta LABEL el id y el FOR 
         label.appendChild(contenido2);//Añadimos el nodo TEXTO con la etiqueta LABEL
 
         var input1= document.createElement("input");//CREAMOS un nodo de tipo Element, un input.
-        input.type="text";//creamos el atributo TYPE
-        input.name="apellidosusuario";//creamos el atributo NAME
-        input.id2="apellidosusuario";//creamos el atributo ID.2
-        input.required;//creamos el atributo REQUIRED
+        input1.type="text";//creamos el atributo TYPE
+        input1.name2="apellidosusuario";//creamos el atributo NAME
+        input1.required;//creamos el atributo REQUIRED
 
+        //CREAMOS EL DNI
+        var label3= document.createElement("label"); //CREAMOS un nodo de tipo Element, una etiqueta.
+        label.id4="DNI";//creamos el atributo ID
+        label.for3="DNI";//creamos el atributo FOR 
+        var contenido3 = document.createTextNode("Introduce tu DNI");//Creamos un nodo texto 
+        document.body.div.form.label3(id4, for3);//Añadimos a la etiqueta LABEL el id y el FOR 
+        label.appendChild(contenido3);//Añadimos el nodo TEXTO con la etiqueta LABEL
+        
+        var input2= document.createElement("input");//CREAMOS un nodo de tipo Element, un input.
+        input2.type="text";//creamos el atributo TYPE
+        input2.name3="DNI";//creamos el atributo NAME
+        input2.required;//creamos el atributo REQUIRED
+
+        //CREAMOS EL TELEFONO
+        var label4= document.createElement("label"); //CREAMOS un nodo de tipo Element, una etiqueta.
+        label.id5="telefono";//creamos el atributo ID
+        label.for4="telefono";//creamos el atributo FOR 
+        var contenido4 = document.createTextNode("Introduce tu Nº de teléfono");//Creamos un nodo texto 
+        document.body.div.form.label4(id5, for4);//Añadimos a la etiqueta LABEL el id y el FOR 
+        label.appendChild(contenido3);//Añadimos el nodo TEXTO con la etiqueta LABEL
+
+        var input3= document.createElement("input");//CREAMOS un nodo de tipo Element, un input.
+        input3.type="text";//creamos el atributo TYPE
+        input3.name3="telefono";//creamos el atributo NAME
+        input3.required;//creamos el atributo REQUIRED
+
+        //CREAMOS LA DIRECCIÓN
+        var label5= document.createElement("label"); //CREAMOS un nodo de tipo Element, una etiqueta.
+        label.id6="direccion";//creamos el atributo ID
+        label.for5="direccion";//creamos el atributo FOR 
+        var contenido5 = document.createTextNode("Introduce tu direccion");//Creamos un nodo texto 
+        document.body.div.form.label4(id6, for5);//Añadimos a la etiqueta LABEL el id y el FOR 
+        label.appendChild(contenido3);//Añadimos el nodo TEXTO con la etiqueta LABEL
+
+        var input4= document.createElement("input");//CREAMOS un nodo de tipo Element, un input.
+        input4.type="text";//creamos el atributo TYPE
+        input4.name3="telefono";//creamos el atributo NAME
+        input4.required;//creamos el atributo REQUIRED
+
+        //CREAMOS LOS RADIO-BUTTON
+        var fieldset = document.createElement("fieldset");//CREAMOS la etiqueta fieldset
+        var legend1 = document.createElement("legend");//CREAMOS la etiqueta legend
+        var contenido6 = document.createTextNode("Escoge un color");//Creamos un elemento de texto
+        legend1.appendChild(contenido6);//Introducimos el texto en la etiqueta Legend
+
+        var input5 = document.createElement("input");
+        input5.type= "radio";//Creamos el atributo type
+        input5.name= "color";//Creamos el atributo color
+        input5.value="azul";//Creamos el atributo value
+        var contenido7= document.createTextNode("Azul");//Creamos el atributo texto
+        input.appendChild(contenido7);//Introducimos el texto en el input
+
+        var input6 = document.createElement("input");
+        input6.type= "radio";//Creamos el atributo type
+        input6.name= "color";//Creamos el atributo color
+        input6.value="negro";//Creamos el atributo value
+        var contenido8= document.createTextNode("negro");//Creamos el atributo texto
+        input.appendChild(contenido8);//Introducimos el texto en el input
+    
+        var input7 = document.createElement("input");
+        input7.type= "radio";//Creamos el atributo type
+        input7.name= "color";//Creamos el atributo color
+        input7.value="Amarillo";//Creamos el atributo value
+        var contenido10= document.createTextNode("Amarillo");//Creamos el atributo texto
+        input.appendChild(contenido10);//Introducimos el texto en el input
+
+        var input8 = document.createElement("input");
+        input8.type= "radio";//Creamos el atributo type
+        input8.name= "color";//Creamos el atributo color
+        input8.value="Amarillo";//Creamos el atributo value
+        var contenido11= document.createTextNode("Amarillo");//Creamos el atributo texto
+        input.appendChild(contenido11);//Introducimos el texto en el input
+        
+        var input9 = document.createElement("input");
+        input9.type= "radio";//Creamos el atributo type
+        input9.name= "color";//Creamos el atributo color
+        input9.value="verde";//Creamos el atributo value
+        var contenido12= document.createTextNode("verde");//Creamos el atributo texto
+        input.appendChild(contenido12);//Introducimos el texto en el input
         
 
+        //CREAMOS LOS RADIO-BUTTON Nº2
+        var fieldset2 = document.createElement("fieldset");//CREAMOS la etiqueta fieldset
+        var legend2 = document.createElement("legend");//CREAMOS la etiqueta legend
+        var contenido13 = document.createTextNode("Escoge un numero");//Creamos un elemento de texto
+        legend1.appendChild(contenido6);//Introducimos el texto en la etiqueta Legend
 
+        var input10 = document.createElement("input");
+        input10.type= "radio";//Creamos el atributo type
+        input10.name= "color";//Creamos el atributo color
+        input10.value="1";//Creamos el atributo value
+        var contenido14= document.createTextNode("1");//Creamos el atributo texto
+        input.appendChild(contenido14);//Introducimos el texto en el input
 
+        var input11 = document.createElement("input");
+        input11.type= "radio";//Creamos el atributo type
+        input11.name= "color";//Creamos el atributo color
+        input11.value="2";//Creamos el atributo value
+        var contenido15= document.createTextNode("2");//Creamos el atributo texto
+        input.appendChild(contenido15);//Introducimos el texto en el input
+    
+        var input12 = document.createElement("input");
+        input12.type= "radio";//Creamos el atributo type
+        input12.name= "color";//Creamos el atributo color
+        input12.value="3";//Creamos el atributo value
+        var contenido16= document.createTextNode("3");//Creamos el atributo texto
+        input.appendChild(contenido16);//Introducimos el texto en el input
 
+        var input13 = document.createElement("input");
+        input13.type= "radio";//Creamos el atributo type
+        input13.name= "color";//Creamos el atributo color
+        input13.value="4";//Creamos el atributo value
+        var contenido17= document.createTextNode("4");//Creamos el atributo texto
+        input.appendChild(contenido11);//Introducimos el texto en el input
+    
         }
     </script>
 </head>
@@ -65,11 +173,52 @@
         <h1 id="titulo">Rellena el formulario para formalizar la compra</h1>
     -->
     <div id="divFormulario">
-        <!--
-            <form name="formulario" id="formulario" action="urlservidor" method="get">
+    <!--
+        <form name="formulario" id="formulario" action="urlservidor" method="get">
+            <label id="nombreusuario" for="nombreusuario">Introduce tu nombre</label>
+            <input type="text" name="nombreusuario" id="nombreusuario" required>
 
-            </form>
-        -->
+            <label id="apellidosusuario" for="apellidosusuario">Introduce tus apellidos</label>
+            <input type="text" name="apellidosusuario" id="apellidosusuario" required>
+
+            <label id="DNI" for="DNI">Introduce tu DNI</label>
+            <input type="text" name="DNI" id="DNI" required>
+
+            <label id="telefono" for="telefono">Introduce tu numero de telefono</label>
+            <input type="text" name="telefono" id="telefono" required>
+
+            <label id="direccion" for="direccion">Introduce tu direccion</label>
+            <input type="text" name="direccion" id="direccion" required>
+            <fieldset>
+                <legend>Elige un color</legend>
+                    <label>
+                        <input type="radio" name="color" value="azul"> Azul
+                    </label>
+                    <label>
+                        <input type="radio" name="color" value="negro"> Negro
+                    </label>
+                    <label>
+                        <input type="radio" name="color" value="amarillo"> Amarillo
+                    </label>
+            </fieldset>
+            <fieldset>
+                <legend>Elige un número</legend>
+                <label>
+                    <input type="radio" name="numero" value="1"> 1
+                </label>
+                <label>
+                    <input type="radio" name="numero" value="2"> 2
+                </label>
+                <label>
+                    <input type="radio" name="numero" value="3"> 3
+                </label>
+                <label>
+                    <input type="radio" name="numero" value="3"> 4
+                </label>
+    </fieldset>
+
+        </form>
+    -->
 
     </div>
 </body>
