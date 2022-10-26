@@ -5,89 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <script>
-        function cargar() {
-            var formulario = document.createElement("form"); // <form></form>
-            formulario.id = "form"; // <form id="form"></form>
-
-            var nombre = document.createElement("input"); // <input></input>
-            nombre.id = "nombre"; // <input id="nombre"></input>
-            nombre.type = "text"; // <input id="nombre" type="text"></input>
-
-            var nom = document.createTextNode("Lierni"); // Lierni
-
-            formulario.appendChild(input); //<input id="nombre" type="text">Lierni</input>
-
-            document.body.div.appendChild(formulario);
-            document.body.div.formulario.appendChild(input);
-
-            /* Vamos a crear un parrafo */
-		var parrafo = document.createElement("p");
-		parrafo.id ="p1" //<p id="p1"/>
-				
-		var contenedor = document.createTextNode("Vamos a crear un formulario HTML con JS"); //<p id="p1">Vamos a crear un formulario con JS</p>
-		
-		parrafo.appendChild(contenedor);
-		
-		document.body.appendChild(parrafo);
-		
-		/* Ahora viene el formulario */
-		
-		var formulario = document.createElement("form");
-		formulario.id = "formulario"; // <form id="formulario"</form>
-		
-		document.body.appendChild(formulario);
-		
-		/* var cuadro = document.createElement("fieldset");
-		
-		document.body.form.appendChild(cuadro); */
-		
-		var nombre = document.createElement("input");
-		nombre.id = "name" // <input id="name"/>
-		nombre.type = "text" // <input id="name" type="text"/>
-		nombre.name = "nombre" // <input id="name" type="text" name="nombre"/>
-			
-		var contenido = document.createTextNode("Nombre y apellidos");
-		
-		formulario.appendChild(nombre);
-		document.body.appendChild(contenido);
-		
-		var documento = document.createElement("input");
-		documento.id = "name" // <input id="name"/>
-		documento.type = "text" // <input id="name" type="text"/>
-		documento.name = "nombre" // <input id="name" type="text" name="document"/>
-			
-		var contenido1 = document.createTextNode("DNI");
-			
-		formulario.appendChild(documento);
-		document.body.appendChild(contenido1);
-		
-		var direccion = document.createElement("input");
-		direccion.id = "name" // <input id="name"/>
-		direccion.type = "text" // <input id="name" type="text"/>
-		direccion.name = "name" // <input id="name" type="text" name="street"/>
-		
-		var contenido2 = document.createTextNode("Direccion");
-		
-		formulario.appendChild(direccion);
-		document.body.appendChild(contenido2);
-		
-		var numero = document.createElement("input");
-		numero.id = "name" // <input id="name"/>
-		numero.type = "number" // <input id="name" type="number"/>
-		numero.name = "number" // <input id="name" type="number" name="number"/>
-		
-		var contenido3 = document.createTextNode("Numero");
-		
-		formulario.appendChild(numero);
-		document.body.appendChild(contenido3);
-        }
-    </script>
+    <title>Requerimiento 1</title>
+    <script src="/AE-1. DOM y Formularios/JavaScript/myscript.js"></script>
 </head>
 
-<body onload="cargar()">
+<body onload=cargar()>
 
     // Añadir los siguientes elementos HTML a un formulario mediante DOM:
     // Campos de texto donde poner el DNI, el nombre y los apellidos, la dirección y el teléfono.
@@ -97,7 +19,33 @@
     // Un campo select.
     // Un text area.
 
-    <div>
+    <div id="form1">
+
+        <form>
+
+            <label for="DNI">DNI:</label>
+            <input type="text" id="DNI1" name="DNI">
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos">
+
+            <label for="opciones">Elige la edad:</label>
+            <input type="radio" name="edad" value="18-28">18-28<br>
+            <input type="radio" name="edad" value="29-39">29-39<br>
+            <input type="radio" name="edad" value="40-50">40-50<br>
+            <input type="radio" name="edad" value="51-61">51-61<br>
+
+            <textarea id="msg" name="msg"></textarea>
+            ---------------------------------------------------------------------
+
+        </form>
+
+    </div>
+
+    <div id="formdiv">
 
     </div>
 
