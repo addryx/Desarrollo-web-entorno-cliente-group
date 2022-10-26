@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <script>
+        function cargar(){
+
+        var h1= document.createElement("h1");// CREAMOS un nodo de tipo Element.
+        h1.id="titulo";//AÑADIMOS id
+        var contenido = document.createTextNode("Rellena el formulario para formalizar la compra");// Creamos un nodo de tipo texto.
+        h1.appendChild(contenido);//añadimos el nodo texto como hijo del tipo element.
+        document.body.appendChild(h1);// añadimos el modo element como hijo de la página.
+
+
+        var formulario = document.getElementById("formulario");//Acccedemos al DIV con el id formulario.
+        var form= documet.createElement("form");//CREAMOS la etiqueta <form>.
+        form.name="formulario";//CREAMOS el nombre de la etiqueta.
+        form.id="formulario";//CREAMOS el id de la etiqueta.
+        form.action= "urlservidor"; //CREAMOS el nodo hijo action
+        form.method= "get";//CREAMOS el nodo hijo method
+        document.body.div.form(name, id, action, method); //AÑADIMOS a la etiqueta form todos los nodos hijos. 
+        document.body.div(form);//AÑADIMOS a la etiqueta div el formulario
+
+        //CREAMOS EL NOMRBE
+        var label= document.createElement("label"); //CREAMOS un nodo de tipo Element, una etiqueta.
+        label.id1="nombreusuario";//creamos el atributo ID
+        label.for1="nombreusuario";//creamos el atributo FOR 
+        var contenido1 = document.createTextNode("Introduce tu nombre");//Creamos un nodo texto 
+        document.body.div.form.label(id, for1);//Añadimos a la etiqueta LABEL el id y el FOR 
+        label.appendChild(contenido1);//Añadimos el nodo TEXTO con la etiqueta LABEL
+
+        var input= document.createElement("input");//CREAMOS un nodo de tipo Element, un input.
+        input.type="text";//creamos el atributo TYPE
+        input.name="nombreusuario";//creamos el atributo NAME
+        input.id2="nombreusuario";//creamos el atributo ID.2
+        input.required;//creamos el atributo REQUIRED
+
+        //CREAMOS LOS APELLIDOS
+        var label2= document.createElement("label"); //CREAMOS un nodo de tipo Element, una etiqueta.
+        label.id2="apellidosusuario";//creamos el atributo ID
+        label.for2="apellidosuario";//creamos el atributo FOR 
+        var contenido2 = document.createTextNode("Introduce tus apellidos");//Creamos un nodo texto 
+        document.body.div.form.label2(id, for2);//Añadimos a la etiqueta LABEL el id y el FOR 
+        label.appendChild(contenido2);//Añadimos el nodo TEXTO con la etiqueta LABEL
+
+        var input1= document.createElement("input");//CREAMOS un nodo de tipo Element, un input.
+        input.type="text";//creamos el atributo TYPE
+        input.name="apellidosusuario";//creamos el atributo NAME
+        input.id2="apellidosusuario";//creamos el atributo ID.2
+        input.required;//creamos el atributo REQUIRED
+
+        
+
+
+
+
+        }
+    </script>
+</head>
+<body onload="cargar">
+    <!--
+        <h1 id="titulo">Rellena el formulario para formalizar la compra</h1>
+    -->
+    <div id="divFormulario">
+        <!--
+            <form name="formulario" id="formulario" action="urlservidor" method="get">
+
+            </form>
+        -->
+
+    </div>
+</body>
+</html>
