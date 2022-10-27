@@ -1,25 +1,27 @@
 function precioTotal() {
-    var ingredientes = document.getElementByName("ingredientes");
-    var precio = 0;
+      
+    var precio = 0
 
-    if (ingredientes.checked) {
-        precio++;
+    if(tam_g.checked){
+        precio = 15
+    } else if (tam_m.checked){
+        precio = 10
+    } else if (tam_p.checked){
+        precio = 5
+    }
+    
+    var ingred = document.getElementsByName("ingredientes")
+
+    for(var i=0; i<ingred.length; i++){
+        if(ingred[i].checked){
+            precio ++
+        }
     }
 
-    if (tam_g.checked){
-        precio =+ 15;
-    }
-    else if (tam_m.checked){
-        precio =+ 10;
-    }
-    else{
-        precio=+5;
-    }
-
-    console.log("Precio total: " + precio);
+    alert("Precio: "+precio)
+    console.log("Precio: "+precio)
 }
 
-window.onload = function(e){
-    
-    btn_procesar.onclick = precioTotal
+window.onload = function(){
+    formulario.onsubmit = precioTotal
 }
