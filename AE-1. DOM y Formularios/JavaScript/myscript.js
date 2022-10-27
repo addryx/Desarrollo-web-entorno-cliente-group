@@ -44,7 +44,12 @@ function cargar() {
 
 /* DIRECCIÓN */
 
+/* IMÁGENES */
 
+var imagen = documento.createElement("img");
+imagen.src = "descarga.jpeg";
+
+formulario.appendChild(imagen);
 
 
 }
