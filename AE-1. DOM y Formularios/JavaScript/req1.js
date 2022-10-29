@@ -238,6 +238,7 @@ function cargar(){
      Aqui hemos creado una etiqueta 'div' porque no nos pemitia 
      crear la imagen solo con la etiqueta 'img'.
     */
+
     var divImg = document.createElement("div");
     divImg.id = "contImg";
     form.appendChild(divImg);
@@ -257,6 +258,7 @@ function cargar(){
      Creamos una etiqueta 'label' a continuación añadimos la etiqueta 'select'.
 
     */
+
     var txtSelect = document.createElement("label");
     form.appendChild(txtSelect);
     var titSelect = document.createTextNode("Select: ")
@@ -289,6 +291,7 @@ function cargar(){
      En este caso hemos creado una etiqueta 'label', 'textarea' y hemos elegido 
      los atributos 'placeholder', 'name' y 'rows'.
     */
+
     var txtTextArea = document.createElement("label");
     form.appendChild(txtTextArea);
     var titTextArea = document.createTextNode("Text Area: ")
@@ -305,6 +308,7 @@ function cargar(){
      En el caso del botón el 'type' tiene que ser submit para enviar la 
      información al servidor.
     */
+   
     var btn = document.createElement("button");
     form.appendChild(btn);
     btn.type = "submit";
