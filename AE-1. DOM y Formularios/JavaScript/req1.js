@@ -1,6 +1,10 @@
 function cargar(){
 
-    // Creación del form y añadirlo al div.
+    /*
+     Creación del form y añadirlo al div.
+     Creamos la etiqueta form y le añadimos los atributos id, action y method.
+     Añadimos el form dentro del div.
+    */
 
     var form = document.createElement("form");
     form.id = "form";
@@ -8,7 +12,12 @@ function cargar(){
     form.method = "post";
     div1.appendChild(form);
 
-    // Creación de los campos texto DNI, nombre y apellidos, dirección y teléfono y añadirlos al form.
+    /* 
+    Creación de los campos texto DNI, nombre y apellidos, dirección y teléfono y añadirlos al form.
+    En cada campo de texto creamos un label y un input con los atrubutos correspondiente.
+    Dentro de los label podemos encontrar el atributo 'for' cuyo valor suele ser el mismo que el valor
+    del atributo 'name' al que pertenece 
+    */
 
     var tituloDNI = document.createElement("label");
     form.appendChild(tituloDNI);
@@ -54,7 +63,11 @@ function cargar(){
     telefono.name = "telefono";
     form.appendChild(telefono);
 
-    // Creación de los 2 campos radio con 4 opciones cada uno y añadirlos al form.
+    /* 
+     Creación de los 2 campos radio con 4 opciones cada uno y añadirlos al form.
+     EL 'name' de los radio tiene que ser igual para todos los del mismo grupo. 
+     Recogemos en 'value' el valor que contiene esa opción.
+     */
 
     var tituloRadio1 = document.createElement("label");
     form.appendChild(tituloRadio1);
@@ -65,7 +78,7 @@ function cargar(){
     form.appendChild(radio1);
     radio1.id = "radio1";
     radio1.type = "radio";
-    radio1.name = "radio1";
+    radio1.name = "radio";
     radio1.value = "1";
     var txtRadio1 = document.createElement("label");
     form.appendChild(txtRadio1);
@@ -76,7 +89,7 @@ function cargar(){
     form.appendChild(radio2);
     radio2.id = "radio2";
     radio2.type = "radio";
-    radio2.name = "radio2";
+    radio2.name = "radio";
     radio2.value = "2";
     var txtRadio2 = document.createElement("label");
     form.appendChild(txtRadio2);
@@ -87,7 +100,7 @@ function cargar(){
     form.appendChild(radio3);
     radio3.id = "radio3";
     radio3.type = "radio";
-    radio3.name = "radio3";
+    radio3.name = "radio";
     radio3.value = "3";
     var txtRadio3 = document.createElement("label");
     form.appendChild(txtRadio3);
@@ -98,7 +111,7 @@ function cargar(){
     form.appendChild(radio4);
     radio4.id = "radio4";
     radio4.type = "radio";
-    radio4.name = "radio4";
+    radio4.name = "radio";
     radio4.value = "4";
     var txtRadio4 = document.createElement("label");
     form.appendChild(txtRadio4);
@@ -114,7 +127,7 @@ function cargar(){
     form.appendChild(radioa);
     radioa.id = "radioa";
     radioa.type = "radio";
-    radioa.name = "radioa";
+    radioa.name = "radio";
     radioa.value = "a";
     var txtRadio1 = document.createElement("label");
     form.appendChild(txtRadio1);
@@ -125,7 +138,7 @@ function cargar(){
     form.appendChild(radiob);
     radiob.id = "radiob";
     radiob.type = "radio";
-    radiob.name = "radiob";
+    radiob.name = "radio";
     radiob.value = "b";
     var txtRadiob = document.createElement("label");
     form.appendChild(txtRadiob);
@@ -136,7 +149,7 @@ function cargar(){
     form.appendChild(radioc);
     radioc.id = "radioc";
     radioc.type = "radio";
-    radioc.name = "radioc";
+    radioc.name = "radio";
     radioc.value = "c";
     var txtRadioc = document.createElement("label");
     form.appendChild(txtRadioc);
@@ -147,14 +160,18 @@ function cargar(){
     form.appendChild(radiod);
     radiod.id = "radiod";
     radiod.type = "radio";
-    radiod.name = "radiod";
+    radiod.name = "radio";
     radiod.value = "d";
     var txtRadiod = document.createElement("label");
     form.appendChild(txtRadiod);
     var titRadiod = document.createTextNode("d");
     txtRadiod.appendChild(titRadiod);
 
-    // Creación campos para 5 checkbox diferentes y añadirlos al form.
+    /* 
+    Creación campos para 5 checkbox diferentes y añadirlos al form.
+    EL 'name' de los checkbox tiene que ser igual para todos los del mismo grupo. 
+     Recogemos en 'value' el valor que contiene esa opción.
+    */
 
     var txtcheckbox = document.createElement("label");
     form.appendChild(txtcheckbox);
@@ -165,7 +182,7 @@ function cargar(){
     form.appendChild(checkbox1);
     checkbox1.id = "checkbox1";
     checkbox1.type = "checkbox";
-    checkbox1.name = "checkbox1";
+    checkbox1.name = "checkbox";
     checkbox1.value = "1";
     var txtcheckbox1 = document.createElement("label");
     form.appendChild(txtcheckbox1);
@@ -176,7 +193,7 @@ function cargar(){
     form.appendChild(checkbox2);
     checkbox2.id = "checkbox2";
     checkbox2.type = "checkbox";
-    checkbox2.name = "checkbox2";
+    checkbox2.name = "checkbox";
     checkbox2.value = "2";
     var txtcheckbox2 = document.createElement("label");
     form.appendChild(txtcheckbox2);
@@ -187,7 +204,7 @@ function cargar(){
     form.appendChild(checkbox3);
     checkbox3.id = "checkbox3";
     checkbox3.type = "checkbox";
-    checkbox3.name = "checkbox3";
+    checkbox3.name = "checkbox";
     checkbox3.value = "3";
     var txtcheckbox3 = document.createElement("label");
     form.appendChild(txtcheckbox3);
@@ -198,7 +215,7 @@ function cargar(){
     form.appendChild(checkbox4);
     checkbox4.id = "checkbox4";
     checkbox4.type = "checkbox";
-    checkbox4.name = "checkbox4";
+    checkbox4.name = "checkbox";
     checkbox4.value = "4";
     var txtcheckbox4 = document.createElement("label");
     form.appendChild(txtcheckbox4);
@@ -209,15 +226,18 @@ function cargar(){
     form.appendChild(checkbox5);
     checkbox5.id = "checkbox5";
     checkbox5.type = "checkbox";
-    checkbox5.name = "checkbox5";
+    checkbox5.name = "checkbox";
     checkbox5.value = "5";
     var txtcheckbox5 = document.createElement("label");
     form.appendChild(txtcheckbox5);
     var titcheckbox5 = document.createTextNode("5");
     txtcheckbox5.appendChild(titcheckbox5);
 
-    // Creación de campos para 2 imágenes y añadirlos al form.
-    
+    /*
+     Creación de campos para 2 imágenes y añadirlos al form.
+     Aqui hemos creado una etiqueta 'div' porque no nos pemitia 
+     crear la imagen solo con la etiqueta 'img'.
+    */
     var divImg = document.createElement("div");
     divImg.id = "contImg";
     form.appendChild(divImg);
@@ -232,33 +252,43 @@ function cargar(){
     img2.src = "/AE-1. DOM y Formularios/img/img2.png";
     divImg.appendChild(img2);
 
-    // Creación de un campo select y añadirlo al form.
+    /*
+     Creación de un campo select y añadirlo al form.
+     Creamos una etiqueta 'label' a continuación añadimos la etiqueta 'select'.
 
+    */
     var txtSelect = document.createElement("label");
     form.appendChild(txtSelect);
     var titSelect = document.createTextNode("Select: ")
     txtSelect.appendChild(titSelect);
 
     var select = document.createElement("select");
+    select.name = "select"
     form.appendChild(select);
 
     var opcion1 = document.createElement("option");
+    opcion1.value="Opcion 1";
     select.appendChild(opcion1)
     var txtopcion1 = document.createTextNode("Opcion 1");
     opcion1.appendChild(txtopcion1);
 
     var opcion2 = document.createElement("option");
+    opcion2.value="Opcion 2";
     select.appendChild(opcion2)
     var txtopcion2 = document.createTextNode("Opcion 2");
     opcion2.appendChild(txtopcion2);
 
     var opcion3 = document.createElement("option");
+    opcion3.value="Opcion 3";
     select.appendChild(opcion3)
     var txtopcion3 = document.createTextNode("Opcion 3");
     opcion3.appendChild(txtopcion3);
     
-    // Creación de campo para un textarea y añadirlo al form.
-
+    /*
+     Creación de campo para un textarea y añadirlo al form.
+     En este caso hemos creado una etiqueta 'label', 'textarea' y hemos elegido 
+     los atributos 'placeholder', 'name' y 'rows'.
+    */
     var txtTextArea = document.createElement("label");
     form.appendChild(txtTextArea);
     var titTextArea = document.createTextNode("Text Area: ")
@@ -270,8 +300,11 @@ function cargar(){
     textarea.placeholder = "Escribe aquí";
     textarea.rows = "5";
 
-    // Creación de un campo submit y añadirlo al form.
-
+    /*
+     Creación de un campo submit y añadirlo al form.
+     En el caso del botón el 'type' tiene que ser submit para enviar la 
+     información al servidor.
+    */
     var btn = document.createElement("button");
     form.appendChild(btn);
     btn.type = "submit";
