@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="req1.js"></script>
+    <link rel="stylesheet" href="styleReq1.css">
+    <title>Pizzería</title>
+</head>
+
+<body>
+    <div id="form">
+        <div id="container" class="container">
+            <h2 class="titulo-form">Pizzería</h2>
+            <form id="formulario" class="form-str" action="URL">
+                <div class="form-group">
+                    <label for="Nombre">* Nombre y apellidos:</label>
+                    <input id="texto1" type="text" class="form-control" name="nombre" value="" placeholder="Nombre y apellidos" autofocus />
+                </div>
+                </br>
+                <div class="form-group">
+                    <label for="direccion">* Dirección de envío:</label>
+                    <input id="texto2" type="text" class="form-control" name="text" value="" placeholder=" Calle, número, apartamento. Código postal + Localidad" />
+                </div>
+                </br>
+                <div class="form-group">
+                    <label for="telefono">* Teléfono de contacto:</label>
+                    <input id="texto3" type="tel" class="form-control" name="number" value="" placeholder="+34 722134268" />
+                </div>
+                </br>
+                <div class="form-group">
+                    <label for="Correo">* Email:</label>
+                    <input id="texto4" type="email" class="form-control" name="text" value="" placeholder="correoelectronico@gmail.com" />
+                </div>
+                </br>
+                <div class="options">
+                    <div class="form-group-opt">
+                        <label for="tamaño">* Elegir tamaño:</label></br>
+                        <input type="radio" name="tamaño" value="Pequeña" id="tam_p"/>  Pequeña<br/>
+                        <input type="radio" name="tamaño" value="Mediana" id="tam_m" checked required/>  Mediana<br/>
+                        <input type="radio" name="tamaño" value="Grande" id="tam_g"/>  Grande<br/>
+                    </div>
+                    </br>
+                    <div class="form-group-opt">
+                        <label for="ingredientes">Añadir ingredientes:</label></br>
+                        <input type="checkbox" name="ingredientes" value="Atún" id="ingr_a"/>  Atún<br/>
+                        <input type="checkbox" name="ingredientes" value="Bacon" id="ingr_b"/>  Bacon<br/>
+                        <input type="checkbox" name="ingredientes" value="Cebolla" id="ingr_c"/>  Cebolla<br/>
+                        <input type="checkbox" name="ingredientes" value="Jamón York" id="ingr_jy"/>  Jamón York<br/>
+                        <p>Todas las pizzas llevan una base de tomate y mozzarella.</p>
+                    </div>
+                </div>
+                <div class="form-group-sub">
+                    <p class="small-p">(*) Campos obligatorios.</p>
+                    <button type="submit" class="btn" value="Realizar pedido">Realizar pedido</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
