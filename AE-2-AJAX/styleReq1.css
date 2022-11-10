@@ -60,6 +60,16 @@ p{
     border-radius: 10px;
 }
 
+.btn2 {
+    display: inline-block;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.btn2:hover{
+    cursor: pointer;
+}
+
 .btn:hover{
     border: 1px solid #000;
     font-weight: bold;
@@ -82,6 +92,7 @@ form label{
     display: inline-block;
     margin-bottom: 6px;
     font-weight: 300;
+    width: 100%;
 }
 
 form .form-group{

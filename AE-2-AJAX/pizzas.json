@@ -20,16 +20,16 @@
         ],
         "TAMAÑOS": [
             {
-            "TAMAÑO": "Grande",
-            "PRECIO": 15
+            "TAMAÑO": "Pequeño",
+            "PRECIO": 5
         },
         {
             "TAMAÑO": "Mediano",
             "PRECIO": 10
         },
         {
-            "TAMAÑO": "Pequeño",
-            "PRECIO": 5
+            "TAMAÑO": "Grande",
+            "PRECIO": 15
         }
         ]
     }
