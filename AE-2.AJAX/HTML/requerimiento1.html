@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/AE-2. AJAX/JS/req1.js"></script>
     <title>Telepizza</title>
 </head>
 
@@ -14,58 +13,54 @@
         <h2>Comenzar pedido</h2>
     </div>
     <div id="form">
-        <form id="formulario" action="URL">
+        <form id="formulario" method="" action="">
             <fieldset>
                 <legend>
                     <h4>Rellene sus datos</h4>
                 </legend>
                 <div id="nom">
                     <label for="Nombre">Nombre y apellidos: </label>
-                    <input id="Nombre" type="text" name="nombre" value="Lierni" autofocus />
+                    <input id="Nombre" type="text" name="nombre" placeholder="Lierni" autofocus />
                 </div>
                 </br>
                 <div id="street">
                     <label for="direccion">Dirección: </label>
-                    <input id="direccion" type="text" name="text" value="Calle Loquesea, Donosti" />
+                    <input id="direccion" type="text" name="text" placeholder="Calle Loquesea, Donosti" />
                 </div>
                 </br>
                 <div id="phone">
                     <label for="telefono">Teléfono de contacto: </label>
-                    <input id="numero" type="tel" name="number" value="722134268" />
+                    <input id="numero" type="tel" name="number" placeholder="722134268" />
                 </div>
                 </br>
                 <div id="email">
                     <label for="Correo">Email: </label>
-                    <input id="correo" type="email" name="text" value="l.beltrandeguevara@gmail.com" />
+                    <input id="correo" type="email" name="text" placeholder="l.beltrandeguevara@gmail.com" />
                 </div>
                 </br>
-                <div class="button">
-                    <label for="tamaño">Elegir tamaño: *</label>
-                    </br>
-                    <input type="radio" name="tamaño" value="Grande" id="tam_g" checked required />Grande<br />
-                    <input type="radio" name="tamaño" value="Mediana" id="tam_m" />Mediana<br />
-                    <input type="radio" name="tamaño" value="Pequeña" id="tam_p" />Pequeña<br />
-                </div>
+
+                <div id="tamanyo"></div>
+
                 </br>
                 <div class="ingredients">
                     <label for="ingredientes" required>Añadir ingredientes: *</label>
                     <br />
-                    <input type="checkbox" name="ingredientes" value="Atún" id="ingr_a" checked />Atún<br />
-                    <input type="checkbox" name="ingredientes" value="Bacon" id="ingr_b" checked />Bacon<br />
-                    <input type="checkbox" name="ingredientes" value="Cebolla" id="ingr_c" checked />Cebolla<br />
-                    <input type="checkbox" name="ingredientes" value="Jamón York" id="ingr_jy" checked />Jamón
-                    York<br />
-                    <br />
                 </div>
+
                 </br>
                 <div class="send">
-                    <button type="submit" value="Procesar pedido" style="width:50px; height:20px">Pedir</button>
+                    <button type="submit" style="width:50px; height:20px">Pedir</button>
+                    <table id="resBusqueda"></table>
                 </div>
+
 
             </fieldset>
         </form>
     </div>
 
+    <p id="ingredientes"></p>
+
 </body>
+<script src="../JS/req1.js"></script>
 
 </html>

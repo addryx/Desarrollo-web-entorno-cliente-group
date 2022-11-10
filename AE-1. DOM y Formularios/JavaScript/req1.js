@@ -319,3 +319,4 @@ function cargar(){
     btn.appendChild(txtbtn);
 
 }
+

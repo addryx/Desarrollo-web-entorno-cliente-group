@@ -1,6 +1,36 @@
 {
     "PIZZAS": {
-        "INGREDIENTES": ["Atún", "Bacon", "Cebolla", "Jamón York"],
-        "TAMAÑOS": ["Grande", "Mediana", "Pequeña"]
+        "INGREDIENTES": [
+            {
+                "INGREDIENTE":"Atún", 
+                "PRECIO": 1
+            },
+            {
+                "INGREDIENTE":"Bacon", 
+                "PRECIO": 1
+            },
+            {
+                "INGREDIENTE":"Cebolla", 
+                "PRECIO": 1
+            },
+            {
+                "INGREDIENTE":"Jamón York", 
+                "PRECIO": 1
+            }
+        ],
+        "TAMAÑOS": [
+            {
+            "TAMAÑO": "Grande",
+            "PRECIO": 15
+        },
+        {
+            "TAMAÑO": "Mediano",
+            "PRECIO": 10
+        },
+        {
+            "TAMAÑO": "Pequeño",
+            "PRECIO": 5
+        }
+        ]
     }
 }

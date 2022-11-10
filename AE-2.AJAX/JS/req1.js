@@ -1,39 +1,85 @@
+const URL_DESTINO = "http://localhost:5501/AE-2.AJAX/JSON/";
+const RECURSO = "pizzas.json";
 
-const URL_DESTINO = "http://localhost:5500/AE-2.AJAX/JSON/"
-const RECURSO = "pizzas.json"
+let tamanyoElegido = [];
 
-    function enviarPeticionAsincrona() {
+formulario.addEventListener("submit", (e) => {
+  e.preventDefault();
+  enviarPeticionAsincrona();
+});
 
-        // Primero creamos un nuevo objeto de XMLHttpRequest
-        let xmlHttp = new XMLHttpRequest()
+function enviarPeticionAsincrona() {
+  // Primero creamos un nuevo objeto de XMLHttpRequest
+  let xmlHttp = new XMLHttpRequest();
 
-        // Al objeto le pasamos la función de callback. 
-        // Esta función se va a ejecutar cada vez que el "readyState" cambie. 
-        // Pero solo vamos a querer procesar el cambio cuando el estado sea completado. 
-        xmlHttp.onreadystatechange = function () {
+  // Cuando ejecutamos la función "open", el readyState tendrá el estado 1.
+  // Cuando ejecutamos el send, tendrá el estado 2.
+  xmlHttp.open("GET", URL_DESTINO + RECURSO, true);
+  xmlHttp.send(null);
+  // Al objeto le pasamos la función de callback.
+  // Esta función se va a ejecutar cada vez que el "readyState" cambie.
+  // Pero solo vamos a querer procesar el cambio cuando el estado sea completado.
+  xmlHttp.onreadystatechange = function () {
+    // Hay muchas maneras desarrollar la función pero lo hacemos así para controlar mejor.
+    // Solo procesaremos la respuesta cuando ésta esté completa y sea correcta.
+    // Hay que tener en cuenta que la respuesta nos llega en formato texto, después habrá que parsearlo a JSON.
+    // Entonces:
+    // Si el estado es igual a 4 (estado completo), ejecutas lo que viene después.
+    // Si además de estar completo, el estado es 200 (OK), entonces obtenemos el valor en texto.
+    if (this.readyState == 4) {
+      if (this.status == 200) {
+        procesarRespuesta(JSON.parse(this.responseText));
+        comprobarTamanyo(JSON.parse(this.responseText));
+      } else {
+        alert("ERROR");
+      }
+    }
+  };
+}
 
-            // Hay muchas maneras desarrollar la función pero lo hacemos así para controlar mejor. 
-            // Solo procesaremos la respuesta cuando ésta esté completa y sea correcta. 
-            // Hay que tener en cuenta que la respuesta nos llega en formato texto, después habrá que parsearlo a JSON. 
-            // Entonces: 
-            // Si el estado es igual a 4 (estado completo), ejecutas lo que viene después.
-            // Si además de estar completo, el estado es 200 (OK), entonces obtenemos el valor en texto. 
-            if (this.readyState == 4) {
-                if (this.status == 200) {
-                    procesarRespuesta(this.responseText)
-                } else {
-                    alert("ERROR")
-                }
-            }
+function procesarRespuesta(jsonDoc) {
+  let label = [];
+  let labelTx = [];
+  let input = [];
+
+  for (let i = 0; i < jsonDoc.PIZZAS.TAMAÑOS.length; i++) {
+
+    label[i] = document.createElement("label");
+    input[i] = document.createElement("input");
+    labelTx[i] = document.createTextNode(jsonDoc.PIZZAS.TAMAÑOS[i].TAMAÑO);
+
+    tamanyo.appendChild(label[i]);
+    label[i].appendChild(labelTx[i]);
+    label[i].appendChild(input[i]);
+    input[i].setAttribute("type", "radio");
+    input[i].setAttribute("name", "tamanyo");
+    input[i].value = jsonDoc.PIZZAS.TAMAÑOS[i].TAMAÑO;
+
+  }
+}
+
+/* function comprobarTamanyo(jsonDoc) {
+
+    let tamanyos = document.getElementsByName("tamanyo");
+    let precio;
+
+    for (let i = 0; i < tamanyos.length; i++) {
+        if (tamanyos[i].checked) {
+        tamanyoElegido.push(1);
+        } else {
+        tamanyoElegido.push(0);
         }
-
-        // Cuando ejecutamos la función "open", el readyState tendrá el estado 1. 
-        // Cuando ejecutamos el send, tendrá el estado 2. 
-        xmlHttp.open('GET', URL_DESTINO + RECURSO, true)
-        xmlHttp.send(null)
     }
 
+    for (let i = 0; i < tamanyos.length; i++) {
+        if (tamanyoElegido[i] == 1) {
+            precio = jsonDoc.PIZZAS.TAMAÑOS[i].PRECIO;
+        }
+    }
 
+} */
+
+/*
     function procesarRespuesta(jsonDoc) {
         //Convertimos un texto a un objeto JSON
         var objetoJson = JSON.parse(jsonDoc)
@@ -73,12 +119,20 @@ const RECURSO = "pizzas.json"
         // td = celda
 
 
+        // En un vídeo de Félix comenta de hacerlo todo mediante js y dom. Incluso el for each.
+
         //Iteramos el array de pizzas y formamos las filas y columnas
         for(let pizza of arrayPIZZAs){
-            table += "<tr><td>" + pizza.INGREDIENTES + "</td>" + 
-                "<td>" + pizza.TAMAÑOS + "</td></tr>";
+            table += "<tr><td>" + pizza.PIZZAS + "</td>" + 
+                "<td>" + pizza.PIZZAS.TAMAÑOS + "</td></tr>";
         }
 
-        resultadoBusqueda.innerHTML = table;
+        for (let i = 0; i<objetoJson.PIZZAS.INGREDIENTES.length; i++) {
+            console.log(objetoJson.PIZZAS.INGREDIENTES[i]);
+        }
+
+        resBusqueda.innerHTML = table;
 
     }
+
+    */
