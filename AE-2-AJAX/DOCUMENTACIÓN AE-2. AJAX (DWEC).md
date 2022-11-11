@@ -89,3 +89,6 @@ Resultado obtenido al hacer el submit:
 	  
 Ésta aplicación ha sido realizada con el IDE VSCode y comprobada en tiempo real a través del plugin Live Server. Aunque también se ha comprobado que pueda accederse a ella a través del archivo HTML. La actividad se ha ido realizando a lo largo de jornadas los 4 integrantes del equipo juntos.
 
+**GitHub:**
+
+https://github.com/addryx/Desarrollo-web-entorno-cliente-group/tree/main/AE-2-AJAX
