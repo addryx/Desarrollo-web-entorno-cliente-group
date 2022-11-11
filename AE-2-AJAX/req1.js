@@ -1,16 +1,20 @@
-let tamElegido = [];
+let tamElegido;
 let ingrElegidos = [];
 
 /* Carga */
 
+formulario.addEventListener("submit", (e) => {
+  e.preventDefault();
+  formulario.onsubmit=validacion();
+  formulario.onsubmit = obtenerTotal();
+  formulario.onsubmit = calcularPrecio;
+});
+
+refresh.onclick = () => { location.reload();};
+
 window.onload = function () {
   enviarPeticionAsincrona();
-  refresh.onclick = () => { location.reload();};
-  formulario.onsubmit = validacion;
-  formulario.onsubmit = calcularPrecio;
-  formulario.addEventListener("submit", (e) => {
-    e.preventDefault();
-  });
+
 };
 
 /* Validación del formulario */
@@ -36,10 +40,10 @@ function validacion() {
   for (var i = 0; i < tamaño.length; i++) {
     if (tamaño[i].checked) {
       seleccionado = true;
-      tamElegido[i] = 1;
+      tamElegido = 1;
       break;
     } else {
-      tamElegido[i] = 0;
+      tamElegido = 0;
     }
   }
   if (!seleccionado) {
@@ -79,7 +83,6 @@ function enviarPeticionAsincrona() {
       if (this.status == 200) {
         procesarTamaño(JSON.parse(this.responseText));
         procesarIngredientes(JSON.parse(this.responseText));
-        calcularPrecio(JSON.parse(this.responseText));
 
       } else {
         alert("[ERROR DE MIERDA]");
@@ -149,29 +152,49 @@ function procesarIngredientes(jsonDoc) {
   ingr.appendChild(parr);
 }
 
+
+function obtenerTotal() {
+
+  let jsonHttp = new XMLHttpRequest();
+  // Es curioso que las constantes esten disponibles aquí también, sin hacer el module.export.
+  jsonHttp.open("GET", URL_DESTINO + RECURSO, true);
+  jsonHttp.send(null);
+  jsonHttp.onreadystatechange = function() {
+      if (this.readyState == 4) {
+          if (this.status == 200) {
+              // Si la conexión es exitosa, le paso a las siguientes funciónes la información obtenida.
+              calcularPrecio(JSON.parse(this.responseText));
+          }
+      }
+  }
+
+}
+
 /* Cálculo del precio de la pizza */
 
 function calcularPrecio(jsonDoc){
   // Guardo o acumulo aquí los precios.
-  let precioTamaño;
+  let precioTamaño = 0;
   let precioIngredientes = 0;
   
   console.log("estoy dentro");
 
+
   let INGREDIENTES = [];
   INGREDIENTES = jsonDoc.PIZZAS.INGREDIENTES;
 
-  // Si algún array tiene un 1 en alguna posición, esque ese ingrediente o tamaño ha sido marcado.
-  // La posición de ese 1, coincidira la posición del precio del tamaño o ingrediente en la lista.
-  //for (let i=0; i<jsonDoc.PIZZAS.TAMAÑOS.length; i++) {
-  //    if (tamElegido[i] == 1) precioTamaño = jsonDoc.PIZZAS.TAMAÑOS[i].PRECIO;
-  //}
 
-  for (let i=0; i<INGREDIENTES.length; i++) {
-      if (ingrElegidos[i] == 1) precioIngredientes += jsonDoc.PIZZAS.INGREDIENTES[i].PRECIO;
+  //Si algún array tiene un 1 en alguna posición, esque ese ingrediente o tamaño ha sido marcado.
+  // La posición de ese 1, coincidira la posición del precio del tamaño o ingrediente en la lista.
+  for (let i=0; i<jsonDoc.PIZZAS.TAMAÑOS.length; i++) {
+      if (tamElegido == 1) precioTamaño =+ jsonDoc.PIZZAS.TAMAÑOS[i].PRECIO;
   }
 
+  for (let i=0; i<INGREDIENTES.length; i++) {
+      if (ingrElegidos[i] == 1) precioIngredientes =+ jsonDoc.PIZZAS.INGREDIENTES[i].PRECIO;
+  }
 
+  alert(precioTamaño + precioIngredientes);
 
   // Muestro el precio.
   agradecimiento.innerHTML = "¡Gracias! Hemos recibido tu pedido correctamente."
