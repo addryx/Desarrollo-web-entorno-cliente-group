@@ -83,7 +83,7 @@ Resultado obtenido al hacer el submit:
 
 	Actividad realizada por:
 	- Adrián Fernández
-	- Lierni Beltrán
+	- Lierni Beltrán de Guevara
 	- Isaac Calderón
 	- Marcos Sandá
 	  
