@@ -3,19 +3,19 @@
         "INGREDIENTES": [
             {
                 "INGREDIENTE":"Atún", 
-                "PRECIO": 1
+                "PRECIO": 1.50
             },
             {
                 "INGREDIENTE":"Bacon", 
-                "PRECIO": 1
+                "PRECIO": 2
             },
             {
                 "INGREDIENTE":"Cebolla", 
-                "PRECIO": 1
+                "PRECIO": 1.20
             },
             {
                 "INGREDIENTE":"Jamón York", 
-                "PRECIO": 1
+                "PRECIO": 1.60
             }
         ],
         "TAMAÑOS": [

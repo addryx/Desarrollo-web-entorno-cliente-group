@@ -37,7 +37,7 @@ h4{
 p{
     font-size: 0.6rem;
     margin: 10px 0;
-    line-height: 1.7rem;
+    line-height: 1rem;
 }
 
 /* Utility Classes */
@@ -60,6 +60,12 @@ p{
     border-radius: 10px;
 }
 
+.btn:hover{
+    border: 1px solid #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .btn2 {
     display: inline-block;
     border: 1px solid #000;
@@ -67,12 +73,6 @@ p{
 }
 
 .btn2:hover{
-    cursor: pointer;
-}
-
-.btn:hover{
-    border: 1px solid #000;
-    font-weight: bold;
     cursor: pointer;
 }
 
@@ -121,7 +121,19 @@ form .form-control{
     border-radius: 4px;
 }
 
+form .form-group-bottom{
+    display: flex;
+    width: 100%;
+}
+
 form .form-group-sub{
-    width: 80%;
-    margin: auto 10%;
+    width: 50%;
+    text-align: right;
+    margin-top: 21px;
+}
+
+form .form-group-txt{
+    width: 50%;
+    margin: 15px;
+    text-align: left;
 }
