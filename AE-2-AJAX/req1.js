@@ -1,3 +1,6 @@
+let tamElegido = [];
+let ingrElegidos = [];
+
 /* Carga */
 
 window.onload = function () {
@@ -33,7 +36,10 @@ function validacion() {
   for (var i = 0; i < tamaño.length; i++) {
     if (tamaño[i].checked) {
       seleccionado = true;
+      tamElegido[i] = 1;
       break;
+    } else {
+      tamElegido[i] = 0;
     }
   }
   if (!seleccionado) {
@@ -46,7 +52,10 @@ function validacion() {
   for (var i = 0; i < ingrediente.length; i++) {
     if (ingrediente[i].checked) {
       seleccionado = true;
+      ingrElegidos[i] = 1;
       break;
+    } else {
+      ingrElegidos[i] = 0;
     }
   }
   if (!seleccionado) {
@@ -70,6 +79,8 @@ function enviarPeticionAsincrona() {
       if (this.status == 200) {
         procesarTamaño(JSON.parse(this.responseText));
         procesarIngredientes(JSON.parse(this.responseText));
+        calcularPrecio(JSON.parse(this.responseText));
+
       } else {
         alert("[ERROR DE MIERDA]");
       }
@@ -140,6 +151,29 @@ function procesarIngredientes(jsonDoc) {
 
 /* Cálculo del precio de la pizza */
 
-function calcularPrecio(){
-  alert("ME CAGO EN DIOS YA CON EL PUTO PRECIO DE LOS COJONES.");
+function calcularPrecio(jsonDoc){
+  // Guardo o acumulo aquí los precios.
+  let precioTamaño;
+  let precioIngredientes = 0;
+  
+  console.log("estoy dentro");
+
+  let INGREDIENTES = [];
+  INGREDIENTES = jsonDoc.PIZZAS.INGREDIENTES;
+
+  // Si algún array tiene un 1 en alguna posición, esque ese ingrediente o tamaño ha sido marcado.
+  // La posición de ese 1, coincidira la posición del precio del tamaño o ingrediente en la lista.
+  //for (let i=0; i<jsonDoc.PIZZAS.TAMAÑOS.length; i++) {
+  //    if (tamElegido[i] == 1) precioTamaño = jsonDoc.PIZZAS.TAMAÑOS[i].PRECIO;
+  //}
+
+  for (let i=0; i<INGREDIENTES.length; i++) {
+      if (ingrElegidos[i] == 1) precioIngredientes += jsonDoc.PIZZAS.INGREDIENTES[i].PRECIO;
+  }
+
+
+
+  // Muestro el precio.
+  agradecimiento.innerHTML = "¡Gracias! Hemos recibido tu pedido correctamente."
+  total.innerHTML = "El Precio Total: " + (precioTamaño + precioIngredientes) + "€";
 }
