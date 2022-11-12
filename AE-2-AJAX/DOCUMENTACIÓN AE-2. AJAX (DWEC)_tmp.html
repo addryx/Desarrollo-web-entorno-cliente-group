@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOCUMENTACIÓN AE-2. AJAX (DWEC).md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="documentaci%C3%B3n-ae-2-ajax-dwec">DOCUMENTACIÓN AE-2. AJAX (DWEC)</h2>
+<h3 id="html">HTML</h3>
+<p>Para el HTML nos hemos basado en el formulario de la actividad 1 realizada este trimestre. Hemos adaptado el formato del body utilizando divs para posteriormente poder hacer un CSS más organizado.</p>
+<p>A parte de esto, los primeros cuatro inputs que son de tipo texto los hemos introducido en el body manualmente. En el <code>&lt;div class=&quot;options&quot;&gt;</code> hemos creado dos <code>&lt;div&gt;</code> más, uno para tamaños y otro para ingredientes. Estos estan vacios ya que serán posteriormente rellenados con una llamada AJAX al archivo pizzas.json.</p>
+<h3 id="javascript">JAVASCRIPT</h3>
+<p>Cuando abrimos el archivo JS lo primero que vemos es el &quot;modulo&quot; de carga.</p>
+<p>Primero hemos creado el evento <code>window.onload = function()</code> , dentro de el está la función <code>enviarPeticionAsincrona()</code> y así cuando carga la página es lo primero que ejecuta (función explicada posteriormente en la documentación).</p>
+<p>Para el botón de refrescar hemos creado un evento <code>refresh.onclick = () =&gt; { location.reaload();};</code> que recarga la página al clicar el botón.</p>
+<p>Finalmente, en este módulo encontramos una EventListener que cuando detecta el submit del formulario evita ejecutar la action con el <code>e.preventDefault()</code> y lanza dos funciones, <code>validación</code> y <code>obtenerTotal</code>.</p>
+<p>En el segundo &quot;modulo&quot; encontramos la validación del formulario. En esta hemos creado una funcion que se encarga de comprobar que cada campo este rellenado.</p>
+<p>Para las de tipo texto lo hace mediante el <code>value.trim() == &quot;&quot;</code> para detectar si está vacío. Para el tamaño le metemos la información del <code>name=&quot;tamaño&quot;</code> en una variable, posteriormente es recorrida con un for para ver si ese campo está seleccionado o no. Si lo está la variable creada &quot;seleccionado&quot; es true. Si no lo está (comprobandolo con un if) salta una alerta con un mensaje de error.</p>
+<p>Para los ingredientes hace exactamente el mismo proceso.</p>
+<p>En el tercer &quot;módulo&quot; hacemos la llamada a través de AJAX a la base de datos (json). Creamos una constante con la URL_DESTINO a la cual le metemos la dirección localhost y otra constante llamada RECURSO con el archivo json.</p>
+<p>Creamos la función <code>enviarPeticionAsincrona()</code> , dentro de ésta encontramos:</p>
+<p>Primero creamos un objeto XMLHttpRequest, después ejecutamos la función open y send.</p>
+<pre><code>ESTADOS DEL READYSTATE:
+- open = 1
+- send = 2
+- interactive = 3
+- completed = 4
+</code></pre>
+<p>Llamamos al evento <code>xmlHttp.onreadystatechange = function()</code> y dentro de el creamos dos if's, uno nos detecta si el readyState es 4, por lo tanto completado y el otro nos detecta si el estado es 200 que asegura que es correcto, si los dos son true ejecutamos las funciones <code>procesarTamaño()</code> y <code>procesarIngredientes()</code> a las que se les pasa por parámetro el json parseado para poder acceder a éste.</p>
+<p>Creamos las funciónes <code>procesarTamaño()</code> y <code>procesarIngredientes()</code> las cuales se les pasa por parámetro el <code>(jsonDoc)</code> ya que con estas funciónes a través de DOM creamos los elementos necesarios como los label, inputs o textos y los atributos de éstos.</p>
+<p>Alguno de los valores como los tamaños y los ingredientes son traídos del <code>jsonDoc</code>.</p>
+<p>El cuarto y último &quot;módulo&quot; nos calcula el precio de la pizza.</p>
+<p>Volvemos a crear una función <code>obtenerTotal()</code> para hacer una llamada a AJAX y ejecutar la función <code>calcularPrecio()</code> volviendole a pasar el json paseado por parámetro.</p>
+<p>En la función <code>calcularPrecio()</code> la cual tiene por parámetro el <code>jsonDoc</code> creamos dos variables para los precios de tamaño y ingredientes.</p>
+<p>A través de dos for recorremos dentro del json los tamaños e ingredientes, comprobando si estos han sido seleccionados desde el formulario (para comprobar si han sido seleccionados volvemos a traer la variable tamaño y ingredientes seleccionadas en la validación) y le decimos que si ha sido seleccionada, la busque en el json y nos traiga el precio.</p>
+<p>Al final le asociamos a través de dos atributos id un texto con <code>innerHTML</code> para el <code>estadoPedido</code>  y un texto más la suma de dos variables para el <code>precio</code>.</p>
+<h3 id="json">JSON</h3>
+<p>En el archivo JSON básicamente hemos creado un primer objeto llamado PIZZAS, dentro de éste dos objetos más llamados INGREDIENTES y TAMAÑOS, y dentro de estos un array con objetos que tienen los propiedades <em>nombre</em> y <em>precio</em>.</p>
+<h3 id="css">CSS</h3>
+<p>Para esta actividad hemos querido darle estílo y hemos implementado un archivo CSS en el cual le hemos cambiado la fuente a toda la página y accediendo al HTML mediante las etiquetas, id's y class hemos ido dandole formato a todos los elementos.</p>
+<h3 id="resultado-de-la-app-img">RESULTADO DE LA APP (IMG)</h3>
+<p>Página principal:
+<img src="file:///c:/AE-2-AJAX/img doc/Pasted image 20221111164600.png" alt="Image text"></p>
+<p>Validación de los campos:</p>
+<p><em>Validación de los campos texto</em></p>
+<p><img src="file:///c:/AE-2-AJAX/img doc/Pasted image 20221111164615.png" alt="Image text"></p>
+<p><em>Validación del campo tamaño</em></p>
+<p><img src="file:///c:/AE-2-AJAX/img doc/Pasted image 20221111164727.png" alt="Image text"></p>
+<p><em>Validación de los ingredientes</em></p>
+<p><img src="file:///c:/AE-2-AJAX/img doc/Pasted image 20221111164744.png" alt="Image text"></p>
+<p>Resultado obtenido al hacer el submit:</p>
+<p><img src="file:///c:/AE-2-AJAX/img doc/Pasted image 20221111164703.png" alt="Image text"></p>
+<pre><code>Actividad realizada por:
+- Adrián Fernández
+- Lierni Beltrán de Guevara
+- Isaac Calderón
+- Marcos Sandá
+</code></pre>
+<p>Ésta aplicación ha sido realizada con el IDE VSCode y comprobada en tiempo real a través del plugin Live Server. Aunque también se ha comprobado que pueda accederse a ella a través del archivo HTML. La actividad se ha ido realizando a lo largo de jornadas los 4 integrantes del equipo juntos.</p>
+<p><strong>GitHub:</strong></p>
+<p>https://github.com/addryx/Desarrollo-web-entorno-cliente-group/tree/main/AE-2-AJAX</p>
+
+</body>
+</html>

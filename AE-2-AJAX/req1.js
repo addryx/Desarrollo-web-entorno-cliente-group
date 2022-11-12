@@ -12,7 +12,11 @@ formulario.addEventListener("submit", (e) => {
   obtenerTotal();
 });
 
-/* Validación del formulario */
+/* Validación del formulario                
+
+Con el método 'trim()' eliminanos los espacios en blanco a ambos lados del String. 
+Comparamos que el campo correspondiente no sea igual a vacio, si está vacío lanza un mensaje al usuario informando. 
+*/
 
 function validacion() {
   console.log("validando los datos del formulario...");
@@ -30,6 +34,10 @@ function validacion() {
     return false;
   }
 
+  /*
+  Con el siguiente método recorremos todas las etiquetas con el nombre 'tamaño'. Si reconoce que una está seleccionada la ejecución se rompe, 
+  en el caso de que no encuentre un elemento seleccionado, manda un mensaje al usuario por pantalla.
+  */ 
   tamaño = document.getElementsByName("tamaño");
   var seleccionado = false;
   for (var i = 0; i < tamaño.length; i++) {
@@ -63,7 +71,9 @@ function validacion() {
 
 const URL_DESTINO = "http://localhost:5501/AE-2-AJAX/";
 const RECURSO = "pizzas.json";
-
+/* Realizamos una peticion ASINCRONA
+  Esta funcion se va a realizar cara vez que haya un cambio en la propiedad 'readyState'.
+  Cuando la respuesta este completa y su estado sea 200 leeremos el mensaje del servidor y lo procesaremos.  */ 
 function enviarPeticionAsincrona() {
   let xmlHttp = new XMLHttpRequest();
   xmlHttp.open("GET", URL_DESTINO + RECURSO, true);
@@ -80,7 +90,9 @@ function enviarPeticionAsincrona() {
     }
   };
 }
-
+/*A la siguiente función se le pasa por parmetro un objeto JSON. Se crean como variables las etiquetas que vamos a utilizar y las inicializamos como arrays,
+Con el DOM creamos los elementos correspondientes y con un for recorremos el tamaño de las pizzas del documento 'json'. Con cada iteración pedimos que se creen 
+los elementos que necesitamos*/ 
 function procesarTamaño(jsonDoc) {
   let input = [];
   let inputTx = [];
@@ -108,7 +120,7 @@ function procesarTamaño(jsonDoc) {
     label.appendChild(brfor[i]);
   }
 }
-
+/* Esta función es igual que la función anterior 'procesarTamaño(jsonDoc)'. En este caso recorremos con el for los ingredientes. */ 
 function procesarIngredientes(jsonDoc) {
   let input = [];
   let inputTx = [];
@@ -143,7 +155,7 @@ function procesarIngredientes(jsonDoc) {
 }
 
 /* Cálculo del precio de la pizza */
-
+//Volvemos a a crear esta función para hacer una llamada a AJAX y ejecutar funcion 'calcularPrecio'
 function obtenerTotal() {
 
   let jsonHttp = new XMLHttpRequest();
@@ -157,7 +169,9 @@ function obtenerTotal() {
       }
   }
 }
-
+/*A través de dos for recorremos el tamaño y los ingredientes, si el elemento ha sido seleccionado
+  le suma el precio a la variable que corresponde. Al final le asociamos dos atributos id de un texto
+  con innerHTML y aparece por pantalla la suma de las dos variables siendo estas el precio total.*/ 
 function calcularPrecio(jsonDoc){
   let precioTamaño = 0;
   let precioIngredientes = 0;
