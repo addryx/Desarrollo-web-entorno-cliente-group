@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-h2{
+*{
     font-family: 'Roboto', sans-serif;
-    text-align: center;
-    background: #c9c9c9;
 }
