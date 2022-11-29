@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+.header{
+    border: 1px solid #163347;
+    background: #3175a1;
+    border-radius: 16px;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
 h2{
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    background: #c9c9c9;
 }

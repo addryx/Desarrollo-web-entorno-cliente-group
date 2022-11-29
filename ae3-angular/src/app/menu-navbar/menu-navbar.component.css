@@ -4,6 +4,14 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.navbar{
+    margin: 16px 0 16px 0;
+    border: 1px solid #909294;
+    background: #c8cbce;
+    border-radius: 16px;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
 nav{
     width: 100%;
     display: flex;
@@ -29,6 +37,7 @@ li{
 li:hover{
     font-weight: bold;
     border: 1px solid black;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
 a{
