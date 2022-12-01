@@ -28,3 +28,36 @@ export class VideojuegosComponent implements OnInit {
   }
 
 }
+
+/*
+ COLECCION DE IMÁGENES
+
+var titles=["The Legend of Zelda: Breath of the Wild", "Persona 5 Royal", "Red Dead Redemption", "Call of Duty: Modern Warfare 2", "Elden Ring"];
+
+var imgUrl=["assets/img/legend-zelda.jpg","assets/img/persona-royal.jpg","assets/img/red-dead-redemption.jpg","assets/img/call-of-duty.jpg","assets/img/elden-ring.jpg"];
+
+===========================================================================
+
+import { RouterModule, Imagenes } from '@angular/router';
+
+const routes: Routes = [];
+
+const routes: Imagenes = [
+
+  { path : 'assets/img/legend-zelda.jpg', //En este caso decimos el componente que mostraremos por defecto
+    
+  },
+  { path : 'assets/img/persona-royal.jpg', //cuando definimos el 'path' no puede empezar por '/'
+    
+  },
+  {path : 'assets/img/red-dead-redemption.jpg',
+  
+  
+  {path : 'assets/img/call-of-duty.jpg',
+  },
+
+  {path : 'assets/img/elden-ring.jpg',
+  },
+]:
+
+*/
