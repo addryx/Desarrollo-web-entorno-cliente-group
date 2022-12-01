@@ -26,7 +26,17 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  /*
+//Creamos un metodo y le pasamos el NgForm y creamos las constantes con los name del formulario
+  login(form:NgForm){
 
+    //Con esto rescatamos lo que viene en los campos del formulario
+    const username=form.value.username
+
+    const password=form.value.password
+
+  }
+  */
   public verificarUsuario(){
     for(let i = 0; i < this.listaUsuarios.length; i++){
       if(this.username == this.listaUsuarios[i].username){
