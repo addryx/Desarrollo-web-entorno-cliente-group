@@ -9,7 +9,6 @@ import { MenuNavbarComponent } from './menu-navbar/menu-navbar.component';
 import { LoginComponent } from './login/login.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
-import { UsuariosComponent } from './usuarios/usuarios.component';
 import { VideojuegosComponent } from './videojuegos/videojuegos.component';
 
 @NgModule({
@@ -20,7 +19,6 @@ import { VideojuegosComponent } from './videojuegos/videojuegos.component';
     LoginComponent,
     ContactoComponent,
     SobreNosotrosComponent,
-    UsuariosComponent,
     VideojuegosComponent
   ],
   imports: [
