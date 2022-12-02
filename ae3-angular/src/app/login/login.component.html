@@ -2,13 +2,13 @@
     <form class="custom-form" method="post">
         <h3>Login</h3>
         <label for="username">Username:</label>
-        <input id="username" [(ngModel)]="username" placeholder="username" name="username" autofocus/>
+        <input id="username" [(ngModel)]="username" type="text" placeholder="username" name="username" autofocus/>
         <br>
         <br>
         <label for="password">Password:</label>
-        <input id="password" [(ngModel)]="password" name="username" placeholder="password">
+        <input id="password" [(ngModel)]="password" type="password" name="username" placeholder="password">
         <br>
         <br>
-        <button type="submit" (click)="verificarUsuario()" [routerLink]="['/videojuegos']" [queryParams]="{username:usuario?.username, password:usuario?.password}" >Login</button>
+        <button type="submit" (click)="verificarUsuario()">Login</button>
     </form>
 </div>
