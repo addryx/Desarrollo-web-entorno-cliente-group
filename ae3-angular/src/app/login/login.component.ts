@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Usuario } from '../entidades/Usuario';
 
 @Component({
@@ -13,10 +14,10 @@ export class LoginComponent implements OnInit {
 
 
   // Datos que recogemos en el formulario:
-  username: string = ""
+  username: string = "user1"
   password: string = ""
 
-  constructor() { // Para que la lista no esté vacía, creamos en el constructor 3 usuarios (new Usuario), y lo metemos en la lista con el .push(usuario)
+  constructor(private router:Router) { // Para que la lista no esté vacía, creamos en el constructor 3 usuarios (new Usuario), y lo metemos en la lista con el .push(usuario)
     let usuario: Usuario = new Usuario("user1", "1111")
     this.listaUsuarios.push(usuario);
     usuario = new Usuario("user2", "2222")
@@ -42,7 +43,7 @@ export class LoginComponent implements OnInit {
   public verificarUsuario(){
     for(let i = 0; i < this.listaUsuarios.length; i++){
       if(this.username === this.listaUsuarios[i].username && this.password === this.listaUsuarios[i].password) {
-          alert("EXISTE")
+          this.router.navigate(['/videojuegos'])
           break
         }
       else {

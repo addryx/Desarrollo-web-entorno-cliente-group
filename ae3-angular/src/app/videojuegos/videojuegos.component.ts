@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Videojuego } from '../entidades/Videojuegos';
+import { ActivatedRoute } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-videojuegos',
@@ -10,8 +13,12 @@ export class VideojuegosComponent implements OnInit {
 
   listaVideojuegos : Videojuego[] = [] // Lista de usuarios vacía
   videojuego : Videojuego | null = null // Usuario apunta a null
+  username:string=''
 
-  constructor() { 
+
+  constructor(route : ActivatedRoute) { 
+    this.username=route.snapshot.queryParams["username"]
+
     let videojuego : Videojuego = new Videojuego( 1,"The Legend of Zelda: Breath of the Wild", "Nintendo", "/assets/img/legend-zelda.jpg", 9.8)
     this.listaVideojuegos.push(videojuego);
     videojuego = new Videojuego( 2,"Persona 5 Royal", "ATLUS", "/assets/img/persona-5-royal.jpg", 9.1)
