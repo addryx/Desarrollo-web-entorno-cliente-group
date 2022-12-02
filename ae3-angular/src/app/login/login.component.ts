@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
   public verificarUsuario(){
     for(let i = 0; i < this.listaUsuarios.length; i++){
       if(this.username == this.listaUsuarios[i].username && this.password == this.listaUsuarios[i].password){
-        alert('Usuario exíste.')
+        alert('EXISTE')
         break
       } else {
         alert('Usuario no exíste.')
