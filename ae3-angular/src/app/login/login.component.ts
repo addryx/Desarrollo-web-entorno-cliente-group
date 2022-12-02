@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
           break
         }
       else {
-        alert('Usuario no exíste.')
+        alert('Usuario no existe.')
         break
       }
     }
