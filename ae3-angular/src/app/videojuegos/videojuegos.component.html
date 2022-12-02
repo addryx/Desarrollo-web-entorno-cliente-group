@@ -1,1 +1,27 @@
-<p>videojuegos works!</p>
+<div class="container">
+    <div class="usuario">
+        <p>Usuario: </p>
+    </div>
+    
+    <div class="tabla">
+        <div class="Listado">
+            <h2>Listado de videojuegos:</h2>
+            <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>VALORACIÓN MEDIA</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let videojuego of listaVideojuegos">
+                    <td>{{videojuego.identificador}}</td>
+                    <td style="cursor:pointer;" [routerLink]="[ '/detallevj', videojuego.identificador, videojuego.titulo, videojuego.compania, videojuego.imagen, videojuego.valorMedio]">{{videojuego.titulo}}</td>
+                    <td>{{videojuego.valorMedio}}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

@@ -12,25 +12,6 @@
     box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
-.usuario p{
-    font-style: italic;
-}
-
-.titulo{
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.usuario{
-    width: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 12px;
-}
-
 .tabla{
     width: 100%;
     display: flex;
@@ -45,4 +26,12 @@ tr, th, td{
     text-align: center;
     padding: 8px 24px;
     border: 1px solid black;
+}
+
+button{
+    margin: 16px;
+}
+
+.card{
+    display: flex;
 }
