@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 import { VideojuegosComponent } from './videojuegos/videojuegos.component';
+import { DetalleVideojuegoComponent } from './detalle-videojuego/detalle-videojuego.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { VideojuegosComponent } from './videojuegos/videojuegos.component';
     LoginComponent,
     ContactoComponent,
     SobreNosotrosComponent,
-    VideojuegosComponent
+    VideojuegosComponent,
+    DetalleVideojuegoComponent
   ],
   imports: [
     BrowserModule,
