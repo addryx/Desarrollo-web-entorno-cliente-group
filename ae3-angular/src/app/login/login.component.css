@@ -5,7 +5,8 @@
 }
 
 .container{
-    height: 79vh; 
+    height: 88vh;
+    margin-top: 16px; 
     display: flex;
     flex-direction: column;
     align-items: center;
