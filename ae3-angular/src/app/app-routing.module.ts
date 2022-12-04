@@ -11,14 +11,14 @@ const routes: Routes = [
   // se navega a través de las rutas que se incluirán aquí.
   // EJ: {path : ruta1, component : Ruta1Component}
 
-  {path : 'inicio', component : LoginComponent},
+  {path : '', component : LoginComponent},
   {path : 'videojuegos', component : VideojuegosComponent},
   {path : 'detallevj', component : DetalleVideojuegoComponent},
   {path : 'contacto', component : ContactoComponent},
   {path : 'sobrenosotros', component : SobreNosotrosComponent},
 
   {path : 'detallevj/:videojuego.identificador/:videojuego.titulo/:videojuego.compania/:videojuego.imagen/:videojuego.valorMedio', component : DetalleVideojuegoComponent},
-  {path : 'inicio/:usuario.username', component : VideojuegosComponent}
+  {path : 'videojuegos/:username/:password', component : VideojuegosComponent},
 ];
 
 @NgModule({

@@ -1,7 +1,7 @@
 <app-menu-navbar></app-menu-navbar>
 <div class="container">
     <div class="usuario">
-        <p>Usuario: </p>
+        <p>Usuario: {{username}}</p>
     </div>
     
     <div class="tabla">
@@ -18,7 +18,7 @@
                 <tbody>
                   <tr *ngFor="let videojuego of listaVideojuegos">
                     <td>{{videojuego.identificador}}</td>
-                    <td style="cursor:pointer;" [routerLink]="[ '/detallevj', videojuego.identificador, videojuego.titulo, videojuego.compania, videojuego.imagen, videojuego.valorMedio]">{{videojuego.titulo}}</td>
+                    <td style="cursor:pointer;" [routerLink]=" ['/detallevj', videojuego.identificador, videojuego.titulo, videojuego.compania, videojuego.imagen, videojuego.valorMedio]">{{videojuego.titulo}}</td>
                     <td>{{videojuego.valorMedio}}</td>
                   </tr>
                 </tbody>

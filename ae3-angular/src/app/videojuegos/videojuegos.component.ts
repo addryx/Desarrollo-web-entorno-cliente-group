@@ -12,7 +12,12 @@ export class VideojuegosComponent implements OnInit {
   listaVideojuegos : Videojuego[] = [] // Lista de videojuegos vacía
   videojuego : Videojuego | null = null // Videojuego apunta a null
 
+  username:string= ""
+
   constructor(route:ActivatedRoute) { 
+
+    
+
     let videojuego : Videojuego = new Videojuego( 1,"The Legend of Zelda: Breath of the Wild", "Nintendo", "/assets/img/legend-zelda.jpg", 9.8)
     this.listaVideojuegos.push(videojuego);
     videojuego = new Videojuego( 2,"Persona 5 Royal", "ATLUS", "/assets/img/persona-5-royal.jpg", 9.1)
@@ -23,6 +28,8 @@ export class VideojuegosComponent implements OnInit {
     this.listaVideojuegos.push(videojuego);
     videojuego = new Videojuego( 5,"Elden Ring", "FromSoftware", "/assets/img/elden-ring.jpg", 9.4)
     this.listaVideojuegos.push(videojuego);
+
+    this.username=route.snapshot.params["username"]
   }
 
   ngOnInit(): void {

@@ -9,6 +9,6 @@
         <input id="password" [(ngModel)]="password" type="password" name="username" placeholder="password">
         <br>
         <br>
-        <button type="submit" (click)="verificarUsuario()">Login</button>
+        <button type="submit" (click)="verificarUsuario()" [routerLink]="[ '/videojuegos', username, password]">Login</button>
     </form>
 </div>

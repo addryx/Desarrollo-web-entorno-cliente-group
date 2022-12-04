@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   usuario: Usuario | null = null // Usuario apunta a null
 
   // Datos que recogemos en el formulario:
-  username : string = ""
+  username : string = "user1"
   password: string = ""
 
   constructor(private router:Router) { // Para que la lista no esté vacía, creamos en el constructor 3 usuarios (new Usuario), y lo metemos en la lista con el .push(usuario)
