@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetalleVideojuegoComponent implements OnInit {
 
+  //estos son los datos que recogemos en la lista
   identificador : number = 0
   titulo : string = ""
   compania : string = ""

@@ -16,14 +16,21 @@ export class LoginComponent implements OnInit {
   username : string = ""
   password: string = ""
 
-  constructor(private router:Router) { // Para que la lista no esté vacía, creamos en el constructor 3 usuarios (new Usuario), y lo metemos en la lista con el .push(usuario)
+  constructor(private router:Router) {// Para que la lista no esté vacía, creamos en el constructor 3 usuarios (new Usuario), y lo metemos en la lista con el .push(usuario)
     let usuario: Usuario = new Usuario("user1", "1111")
     this.listaUsuarios.push(usuario);
   }
 
   ngOnInit(): void {
   }
+/*
+Este método comprueba si el usuario y la contraseña están registrados. 
 
+Si el usuario introducido es estrictamente igual a algún usuario de los que están registrados y la contraseña introducida es correcta,
+permite el acceso. 
+
+En caso de que alguno de los datos introducidos sea erróneo no permite el acceso y muestra el mensaje alert. 
+*/
   public verificarUsuario(){
     for(let i = 0; i < this.listaUsuarios.length; i++){
       if(this.username === this.listaUsuarios[i].username && this.password === this.listaUsuarios[i].password) {
