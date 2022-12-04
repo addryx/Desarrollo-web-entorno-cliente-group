@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   usuario: Usuario | null = null // Usuario apunta a null
 
   // Datos que recogemos en el formulario:
-  username : string = "user1"
+  username : string = ""
   password: string = ""
 
   constructor(private router:Router) { // Para que la lista no esté vacía, creamos en el constructor 3 usuarios (new Usuario), y lo metemos en la lista con el .push(usuario)
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   public verificarUsuario(){
     for(let i = 0; i < this.listaUsuarios.length; i++){
       if(this.username === this.listaUsuarios[i].username && this.password === this.listaUsuarios[i].password) {
-          this.router.navigate(['/videojuegos']);
+          this.router.navigate(['/videojuegos', this.username, this.password]);
           break
         }
       else {
@@ -38,4 +38,10 @@ export class LoginComponent implements OnInit {
       }
     }
   }
+
+  /*
+ public routing() {
+   this.router.navigate([ '/videojuegos', this.username, this.password])
+ }
+ */
 }
