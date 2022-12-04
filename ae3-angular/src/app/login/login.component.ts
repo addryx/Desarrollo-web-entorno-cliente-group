@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   public verificarUsuario(){
     for(let i = 0; i < this.listaUsuarios.length; i++){
       if(this.username === this.listaUsuarios[i].username && this.password === this.listaUsuarios[i].password) {
-          this.router.navigate(['/videojuegos', this.username, this.password]);
+          this.router.navigate(['/videojuegos', this.username]);
           break
         }
       else {

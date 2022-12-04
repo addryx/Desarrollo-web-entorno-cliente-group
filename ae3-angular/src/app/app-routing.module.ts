@@ -18,7 +18,7 @@ const routes: Routes = [
   {path : 'sobrenosotros', component : SobreNosotrosComponent},
 
   {path : 'detallevj/:videojuego.identificador/:videojuego.titulo/:videojuego.compania/:videojuego.imagen/:videojuego.valorMedio', component : DetalleVideojuegoComponent},
-  {path : 'videojuegos/:username/:password', component : VideojuegosComponent},
+  {path : 'videojuegos/:username', component : VideojuegosComponent},
 ];
 
 @NgModule({
